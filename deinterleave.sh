@@ -6,7 +6,6 @@
 ### Default values for CLI parameters
 OUTPUT_DIR="."
 COMPRESS_OUTPUT="FALSE"
-THREADS=2
 
 ### Parse the commandline arguments, if they are not part of the pipeline, they get sent to Snakemake
 POSITIONAL=()
@@ -31,11 +30,6 @@ do
         ;;
         --output_r2)
         OUTPUT_R2="$2"
-        shift # Next
-        shift # Next
-        ;;
-        -t|--threads)
-        THREADS="$2"
         shift # Next
         shift # Next
         ;;
@@ -77,8 +71,6 @@ Options:
 --output_r2         Name of the output file (not including output directory) for the reverse reads. Default: same name than input file 
                     but adding the suffix _R2 to the name. For instance if the interleaved file is 'sample1.fastq', the output_r2 file 
                     will be 'sample1_R2.fastq(.gz)'
-
--t, --threads       Number of threads used for compression. Default: 2
 
 --compress          The default is not to compress the output. If you wish to compress it instead, add this flag to the command
 

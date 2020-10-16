@@ -1,0 +1,5 @@
+# Folders too ignore
+Documentation/
+
+#Files to ignore
+.Rhistory
